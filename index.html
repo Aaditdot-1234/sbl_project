@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"> 
@@ -12,13 +12,13 @@
 </head>  
 <body onscroll="ResizeSpan()"> 
     <div class="cont" onmouseover="BoxShadow(this)" onmouseleave="RemoveBoxShadow(this)"> 
-        <a href="home.html" class="icon"><h2> Biswas <br> Fabrication </h2></a> 
+        <a href="index.html" class="icon"><h2> Biswas <br> Fabrication </h2></a> 
         <nav class="cont1">  
             <a href="login.html" style="font-size: 19px;">Login</a>   
             <div class="cont1"> 
-                <a href="projects.html" style="padding-left:10px;font-size: 19px;">Projects</a>
+                <a href="#" onclick="scrollToSection('project_id')" style="padding-left:10px;font-size: 19px;">Projects</a>
             </div>
-            <a href="#About" style="font-size: 19px;">About</a>
+            <a href="#" onclick="scrollToSection('about_us_id')" style="font-size: 19px;">About</a>
             <div class="cont1">
                 <img src="public/svg's/Call_Us.svg">
                 <a href="contact.html" style="padding-left:10px;font-size: 19px;">Contact</a>
@@ -30,11 +30,13 @@
         <img src="public/svg's/instagram.svg" alt="not found"> 
         <img src="public/svg's/linkedin.svg" alt="not found">
     </div>  
-    <div class="Chat">
-        <button>
-            <img src="public/svg's/whatsapp.svg" alt="not found"> 
-            <div><p>Let's chat</p></div>
-        </button>
+    <div class="Chat"> 
+        <a href="https://api.whatsapp.com/send?phone=9984624288">
+            <button>
+                <img src="public/svg's/whatsapp.svg" alt="not found"> 
+                <div><p>Let's chat</p></div>
+            </button>
+        </a>
     </div>
     <div class="coverinnerinner"> 
         <div class="coverinner">
@@ -62,7 +64,7 @@
                     </div>  
                 </div>
             </div> 
-            <div class="cover3">   
+            <div class="cover3" id="services">   
                 <br><br><br>
                 <div>
                     <h3 style="text-align: left; font-size: 30px; font-weight: 50; margin: 10px 60px;">Our Services</h3> 
@@ -131,7 +133,7 @@
     </div> 
     <div class="projects">
         <div class="projectinner"> 
-            <div> 
+            <div id="project_id"> 
                 <div>
                     <img src="public/images/living1.png " alt="not found" style="height: 650px; width: 100%;padding: 0%;"> 
                 </div>
@@ -164,7 +166,7 @@
                     <p>Sustainable & Accountable</p>
                 </div>
             </div>
-            <div>
+            <div id="about_us_id">
                 <div style="border: none;">
                     <h2 style="text-align: left; margin-left: 40px;font-family: Verdana;">About Us:</h2> 
                     <p style="padding: 40px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum nulla, in pariatur, quibusdam voluptatibus magni, voluptates blanditiis explicabo possimus cumque odit? Vel omnis molestiae dolores? Deserunt quae eligendi nisi beatae? <br><br> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut minima laboriosam repudiandae voluptate quia at nesciunt dolor, corporis, iusto labore animi quae repellendus necessitatibus dolore impedit cupiditate quasi. Nesciunt, quis!</p>
@@ -204,18 +206,18 @@
                 <input type="text" placeholder="E-mail">
             </div>
             <div class="input3">
-                <input type="text" placeholder="Feedback">
+                <textarea type="text" placeholder="Feedback"></textarea>
             </div>
             <div class="submit">
                 <button>Submit</button>
             </div>
         </div>
         <div class="connections_upper"> 
-            <div class="connections"><p>Home</p></div>
-            <div class="connections"><p>Services</p></div>
-            <div class="connections"><p>Projects</p></div>
-            <div class="connections"><p>Contact</p></div>
+            <div class="connections" onclick="scrollToSection('span1')" ><p>Home</p></div>
+            <div class="connections" onclick="scrollToSection('services')"><p>Services</p></div>
+            <div class="connections" onclick="scrollToSection('project_id')"><p>Projects</p></div>
+            <div class="connections"><a href="contact.html"><p>Contact</p></a></div>
             <button>Call Now</button>
         </div>
     </div>
-</body> -->
+</body>

@@ -33,7 +33,15 @@ function ResizeSpan() {
 } 
 
 function visit() {
-    window.location.href = "main.html";
+    var confirmation = confirm("You are about to visit Biswas Fabrication. Are you sure you want to proceed?");      
+    if (confirmation) {
+        window.location.href = "main.html"; 
+    }
+} 
+ 
+function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
 }
 
 const observer = new IntersectionObserver((entries) =>{ 
@@ -169,4 +177,4 @@ const tetris_animate4 = new IntersectionObserver((entries) =>{
     });
 });
 const hidden_info4 = document.querySelectorAll('.image4');
-hidden_info4.forEach((el) => tetris_animate.observe(el));   
+hidden_info4.forEach((el) => tetris_animate.observe(el));    

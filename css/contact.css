@@ -1,0 +1,57 @@
+.main_window {
+    height: 100vh; 
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-weight: 600; 
+    background-image: linear-gradient(to bottom left ,black,rgb(85, 0, 82));
+} 
+.container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+} 
+ 
+p {
+    margin-bottom: 20px;
+    text-align: center; 
+    font-weight: 100;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+}
+li {
+    margin-bottom: 10px;
+}
+ 
+#contactForm {
+    display: flex; 
+    align-items: start; 
+    justify-content: center; 
+    flex-direction: column; 
+} 
+ 
+#contactForm div {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 20px;
+} 
+ 
+button {
+    padding: 10px; 
+    background-color: #ccc;
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+}

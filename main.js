@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Adit Chaurasia">
-    <meta name="Description" content="This page contains all the things I am learning how to create as I learn HTML.">
-    <title>Main</title>
-    <link rel="icon" href="public/images/html5.png" type="image/x-icon"> 
-    <link rel="stylesheet" href="css/style1.css">
-    <link rel="stylesheet" href="css/main.css">   
-    <script src="./javascript/script.js" defer></script> 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-</head>  
-<body>
+// import "./style.css";
+import "./css/main.css" 
+import "./css/style1.css"
+
+import { supabase } from "./javascript/db";
+
+console.log("cleint", supabase);
+
+document.querySelectorAll(".app").innerHTML = `
     <div class="cont" onmouseover="BoxShadow(this)" onmouseleave="RemoveBoxShadow(this)"> 
-        <a href="index.html" class="icon"><h2> Biswas <br> Fabrication </h2></a> 
+        <a href="home.html" class="icon"><h2> Biswas <br> Fabrication </h2></a> 
         <div id="shop" style="margin-left:100px;"> 
             <div class="cont1">
                 <a href="main.html">Studio</a> 
@@ -125,7 +119,7 @@
         <nav class="cont1">  
             <div class="cont1">
                 <img src="public/svg's/Call_Us.svg">
-                <a href="contact.html" style="padding-left:10px;">Contact</a>
+                <a href="Contact" style="padding-left:10px;">Contact</a>
             </div>
             <a href="login.html">Login</a> 
             <a href="#About">About</a>  
@@ -152,91 +146,5 @@
                 </div>
             </div> 
         </div>
-    </div> 
-</body> 
- 
-<!-- <div class="container">
-    <div>
-        <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="not found" class="product_img">
-    </div> 
-    <div class="product_info">
-        <div>
-          <h3>
-            <a>
-              <span aria-hidden="true" class="absolute inset-0"></span>
-              Basic Tee
-            </a>
-          </h3>
-          <p>Black</p>
-        </div>
-        <p style="padding: 0%; margin-top: 20px;">$35</p>
     </div>
-</div>
-<div class="container">
-    <div>
-        <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="not found" class="product_img">
-    </div>
-    <div class="product_info">
-        <div>
-          <h3>
-            <a>
-              <span aria-hidden="true" class="absolute inset-0"></span>
-              Basic Tee
-            </a>
-          </h3>
-          <p>Black</p>
-        </div>
-        <p style="padding: 0%; margin-top: 20px;">$35</p>
-    </div>
-</div>
-<div class="container">
-    <div>
-        <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="not found" class="product_img">
-    </div>
-    <div class="product_info">
-        <div>
-          <h3>
-            <a>
-              <span aria-hidden="true" class="absolute inset-0"></span>
-              Basic Tee
-            </a>
-          </h3>
-          <p>Black</p>
-        </div>
-        <p style="padding: 0%; margin-top: 20px;">$35</p>
-    </div>
-</div>
-<div class="container">
-    <div>
-        <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="not found" class="product_img">
-    </div>
-    <div class="product_info">
-        <div>
-          <h3>
-            <a>
-              <span aria-hidden="true" class="absolute inset-0"></span>
-              Basic Tee
-            </a>
-          </h3>
-          <p>Black</p>
-        </div>
-        <p style="padding: 0%; margin-top: 20px;">$35</p>
-    </div>
-</div>
-<div class="container">
-    <div>
-        <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="not found" class="product_img">
-    </div>
-    <div class="product_info">
-        <div>
-          <h3>
-            <a>
-              <span aria-hidden="true" class="absolute inset-0"></span>
-              Basic Tee
-            </a>
-          </h3>
-          <p>Black</p>
-        </div>
-        <p style="padding: 0%; margin-top: 20px;">$35</p>
-    </div>
-</div> -->
+    `;
