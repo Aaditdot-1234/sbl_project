@@ -177,4 +177,4 @@ const tetris_animate4 = new IntersectionObserver((entries) =>{
     });
 });
 const hidden_info4 = document.querySelectorAll('.image4');
-hidden_info4.forEach((el) => tetris_animate.observe(el));    
+hidden_info4.forEach((el) => tetris_animate.observe(el));       

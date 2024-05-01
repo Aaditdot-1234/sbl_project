@@ -12,7 +12,7 @@
 </head>   
 <body> 
     <div class="form_container">
-        <form id="productForm"> 
+        <form id="productForm" method="post" action="process_form.php"> <!-- PHP form action -->
             <h1 style="font-family: Verdana; margin-bottom: 100px;text-align: center;">Add product</h1> 
 
             <label for="productName">Product Name:</label>
@@ -28,6 +28,6 @@
         </form>  
     </div>  
     <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script> -->
-    <script src="javascript/db.js" type="module"></script>
+    <!-- <script src="javascript/db.js" type="module"></script> --> 
 </body>
 </html>

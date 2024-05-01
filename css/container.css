@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0; 
     overflow-x: hidden;
 }
@@ -37,11 +37,11 @@ input[type="number"] {
 /* input[type="file"] {
     margin-bottom: 50px;
 } */
-button[type="submit"] {
+/* button[type="submit"] {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: 1px solid #4CAF50; 
     border-radius: 100px;
     cursor: pointer;
-}
+}  */ 

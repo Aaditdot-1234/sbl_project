@@ -6,24 +6,61 @@
     <meta name="author" content="Adit Chaurasia">
     <meta name="Description" content="This page contains all the things I am learning how to create as I learn HTML.">
     <title>Main</title>
-    <link rel="icon" href="public/images/html5.png" type="image/x-icon"> 
+    <link rel="icon" href="/images/html5.png" type="image/x-icon"> 
     <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="css/main.css">   
-    <script src="./javascript/script.js" defer></script> 
+    <script src="javascript/script.js" defer></script>  
+    <script src="javascript/db.js" type="module" defer></script> 
+    <script src="javascript/productpage.js" type="module" defer></script> 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>  
 <body>
     <div class="cont" onmouseover="BoxShadow(this)" onmouseleave="RemoveBoxShadow(this)"> 
         <a href="index.html" class="icon"><h2> Biswas <br> Fabrication </h2></a> 
-        <div id="shop" style="margin-left:100px;"> 
+        <nav class="cont1">  
             <div class="cont1">
-                <a href="main.html">Studio</a> 
-                <img src="public/svg's/instagram.svg" alt="Instagram"> 
-                <img src="public/svg's/facebook.svg" alt="Facebook">
-                <img src="public/svg's/linkedin.svg" alt="Linkedin">
+                <img src="/svg's/Call_Us.svg">
+                <a href="contact.html" style="padding-left:10px;">Contact</a>
             </div>
+            <a href="login.html">Login</a> 
+            <a href="#About">About</a>  
+        </nav>
+    </div>    
+    <!-- onclick="addContainer()" --> 
+    <!-- href="Container.html" -->
+    <a class="show_sidebar">
+        <img src="/images/cart.png" alt="not found">
+    </a> 
+    <div class="sidebar" id="sidebar"> 
+        <div class="Hide_sidebar">
+            <img src="/images/back.png" alt="not found" class="hide_sidebar"> 
+            <p style="margin: 0%;">My cart</p>
+        </div>  
+        <div class="cart-container" id="cart-container"> 
+        </div>    
+        <div class="total"> 
+           <div class="Sum">       
+           </div> 
+           <button>Buy</button> 
+        </div> 
+    </div>     
+    <div class="practice"> 
+        <div class="first_layout"> 
+            <h1 style="margin-left: 300px;">Customers also purchased:</h1> 
+            <div class="container_outer"> 
+                <div class="ads">
+                    <p>Ads</p>
+                </div> 
+                <div class="rows">
+                    <div class="grid_layout"> 
+                    </div>                    
+                </div>
+            </div> 
         </div>
-        <div class="categories-container" style="margin-left: 100px;"> 
+    </div>  
+</body>    
+ 
+        <!-- <div class="categories-container" style="margin-left: 100px;"> 
             <span class="categories">Categories</span> 
             <div class="categories-content">
                 <div class="grid-container"> 
@@ -34,7 +71,7 @@
                             <li><a href="#Glass Doors">Glass Doors</a></li>
                             <li><a href="#Wooden Doors">Wooden Doors</a></li>
                             <li><a href="#Metal Doors">Metal Doors</a></li>
-                            <li><a href="#Sliding Doors">Sliding Doors</a></li>
+                            <li><a href="#Sliding Doors and windows">Sliding Doors and windows</a></li>
                             <li><a href="#French Doors">French Doors</a></li>
                         </ul>  
                         <hr>
@@ -97,8 +134,8 @@
                             <li><a href="Glass Facades">Glass Facades</a></li>
                             <li><a href="Custom Mirrors">Custom Mirrors</a></li>
                             <li><a href="Ornamental Metalwork">Ornamental Metalwork</a></li>
-                            <li><a href="Sculptural Installations">Sculptural Installations</a></li>
-                            <li><a href="Custom Signage">Custom Signage</a></li>
+                            <li><a href="Sculptural Installations">Sculptural Installations</a></li> 
+                            <li><a href="Custom Signage">Custom Signage</a></li> 
                         </ul>  
                         <hr>
                         <h5>Home Decor Accessories</h5> 
@@ -113,130 +150,14 @@
                     </div>
                 </div>  
             </div>
-        </div>  
-        <div class="search-icon"> 
-            <div>
-                <input type="text" placeholder="Search...">
+        </div>   
+        <div class="search_bars">
+            <div class="search-icon"> 
+                <input id="searchInput" type="text" placeholder="Search..."> 
+                <div id="search_bar" class="search-icon1">
+                    <img src="/svg's/Search.svg" alt="Search">
+                </div>                 
             </div> 
-            <div id="search_bar" class="search-icon1">
-                <img src="public/svg's/Search.svg" alt="Search">
-            </div>                
-        </div>
-        <nav class="cont1">  
-            <div class="cont1">
-                <img src="public/svg's/Call_Us.svg">
-                <a href="contact.html" style="padding-left:10px;">Contact</a>
+            <div class="result-box" id="autocompleteResults"> 
             </div>
-            <a href="login.html">Login</a> 
-            <a href="#About">About</a>  
-            <!-- <div class="cont1"> 
-                <img src="public/svg's/settingssvg.svg">
-                <a href="#Settings" style="padding-left:10px;">Settings</a>
-            </div> -->
-        </nav>
-    </div>    
-    <!-- onclick="addContainer()" -->
-    <a href="Container.html" class="add_container">
-        <img src="public/images/add.png" alt="not found">
-    </a>
-    <div class="practice"> 
-        <div class="first_layout"> 
-            <h1 style="margin-left: 250px;">Customers also purchased:</h1> 
-            <div class="container_outer"> 
-                <div class="ads">
-                    <p>Ads</p>
-                </div> 
-                <div class="rows">
-                    <div class="grid_layout"> 
-                    </div>                    
-                </div>
-            </div> 
-        </div>
-    </div> 
-</body> 
- 
-<!-- <div class="container">
-    <div>
-        <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="not found" class="product_img">
-    </div> 
-    <div class="product_info">
-        <div>
-          <h3>
-            <a>
-              <span aria-hidden="true" class="absolute inset-0"></span>
-              Basic Tee
-            </a>
-          </h3>
-          <p>Black</p>
-        </div>
-        <p style="padding: 0%; margin-top: 20px;">$35</p>
-    </div>
-</div>
-<div class="container">
-    <div>
-        <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="not found" class="product_img">
-    </div>
-    <div class="product_info">
-        <div>
-          <h3>
-            <a>
-              <span aria-hidden="true" class="absolute inset-0"></span>
-              Basic Tee
-            </a>
-          </h3>
-          <p>Black</p>
-        </div>
-        <p style="padding: 0%; margin-top: 20px;">$35</p>
-    </div>
-</div>
-<div class="container">
-    <div>
-        <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="not found" class="product_img">
-    </div>
-    <div class="product_info">
-        <div>
-          <h3>
-            <a>
-              <span aria-hidden="true" class="absolute inset-0"></span>
-              Basic Tee
-            </a>
-          </h3>
-          <p>Black</p>
-        </div>
-        <p style="padding: 0%; margin-top: 20px;">$35</p>
-    </div>
-</div>
-<div class="container">
-    <div>
-        <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="not found" class="product_img">
-    </div>
-    <div class="product_info">
-        <div>
-          <h3>
-            <a>
-              <span aria-hidden="true" class="absolute inset-0"></span>
-              Basic Tee
-            </a>
-          </h3>
-          <p>Black</p>
-        </div>
-        <p style="padding: 0%; margin-top: 20px;">$35</p>
-    </div>
-</div>
-<div class="container">
-    <div>
-        <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="not found" class="product_img">
-    </div>
-    <div class="product_info">
-        <div>
-          <h3>
-            <a>
-              <span aria-hidden="true" class="absolute inset-0"></span>
-              Basic Tee
-            </a>
-          </h3>
-          <p>Black</p>
-        </div>
-        <p style="padding: 0%; margin-top: 20px;">$35</p>
-    </div>
-</div> -->
+        </div> -->

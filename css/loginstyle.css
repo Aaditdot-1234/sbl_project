@@ -9,8 +9,8 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh; 
-    /* background-color: rgba(226, 226, 226, 0.5);   */
-    background: url('../public/images/wallpaper.jpg');
+    background-image: linear-gradient(to bottom left ,rgb(0, 0, 0),rgb(85, 0, 82));
+    /* background: url('../public/images/wallpaper.jpg'); */
     background-size: cover;
     background-position: center;
 }
