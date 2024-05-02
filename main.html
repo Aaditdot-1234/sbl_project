@@ -12,11 +12,22 @@
     <script src="javascript/script.js" defer></script>  
     <script src="javascript/db.js" type="module" defer></script> 
     <script src="javascript/productpage.js" type="module" defer></script> 
+    <script src="javascript/autocomplete.js" type="module" defer></script> 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>  
 <body>
     <div class="cont" onmouseover="BoxShadow(this)" onmouseleave="RemoveBoxShadow(this)"> 
         <a href="index.html" class="icon"><h2> Biswas <br> Fabrication </h2></a> 
+        <div class="search_bars">
+            <div class="search-icon"> 
+                <input id="searchInput" type="text" placeholder="Search..."> 
+                <div id="search_bar" class="search-icon1">
+                    <img src="/svg's/Search.svg" alt="Search">
+                </div>                 
+            </div> 
+            <div class="result-box" id="autocompleteResults"> 
+        </div>
+        </div> 
         <nav class="cont1">  
             <div class="cont1">
                 <img src="/svg's/Call_Us.svg">
@@ -27,7 +38,7 @@
         </nav>
     </div>    
     <!-- onclick="addContainer()" --> 
-    <!-- href="Container.html" -->
+    <!-- href="Container.html" --> 
     <a class="show_sidebar">
         <img src="/images/cart.png" alt="not found">
     </a> 
@@ -150,14 +161,4 @@
                     </div>
                 </div>  
             </div>
-        </div>   
-        <div class="search_bars">
-            <div class="search-icon"> 
-                <input id="searchInput" type="text" placeholder="Search..."> 
-                <div id="search_bar" class="search-icon1">
-                    <img src="/svg's/Search.svg" alt="Search">
-                </div>                 
-            </div> 
-            <div class="result-box" id="autocompleteResults"> 
-            </div>
-        </div> -->
+        </div> -->  

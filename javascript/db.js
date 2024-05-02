@@ -8,20 +8,67 @@ console.log("cleint", supabase);
 
 export { supabase }; 
 
-async function fetchProducts() {
-    const { data, error } = await supabase
-        .from('product')
-        .select('product_name, product_category, product_price, product_image');
+// async function fetchProducts() {
+//     const { data, error } = await supabase
+//         .from('product')
+//         .select('product_name, product_category, product_price, product_image');
+
+//     if (error) {
+//         console.error('Error fetching products:', error.message);
+//         return [];
+//     }
+ 
+//     console.log('Fetched Products:',data);
+//     return data || [];
+// }
+ 
+async function fetchProducts(category) {
+    let query = supabase.from('product').select('product_name, product_category, product_price, product_image');
+    
+    if (category) {
+        query = query.eq('product_category', category);
+    }
+
+    const { data, error } = await query;
 
     if (error) {
         console.error('Error fetching products:', error.message);
         return [];
     }
  
-    console.log('Fetched Products:',data);
+    console.log('Fetched Products:', data);
     return data || [];
 }
  
+async function renderProducts(products) {
+    const gridLayout = document.querySelector('.grid_layout');
+    gridLayout.innerHTML = ""; // Clear previous products
+    if (products.length > 0) {
+        const containerHTML = products.map(product => `
+            <div class="container">
+                <div>
+                    <img src="${product.product_image}" alt="${product.product_name}" class="product_img">
+                </div> 
+                <div class="product_info">
+                    <div style="display:flex;gap">
+                        <h3>
+                            <a>
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                                ${product.product_name}
+                            </a>
+                        </h3>
+                        <p style="text-align:center">${product.product_category}</p>
+                    </div>
+                    <p style="padding: 0%; margin-top: 0px; margin-bottom:0px; text-align: center">₹${product.product_price}</p>
+                </div>
+            </div>
+        `).join('');
+        gridLayout.innerHTML += containerHTML;
+    } else {
+        gridLayout.innerHTML = "<p>No products found</p>";
+    }
+}
+
 async function addContainerWithProducts() {
     // Find the last grid layout
     const lastGridLayout = document.querySelector('.grid_layout:last-of-type');
@@ -86,7 +133,13 @@ function createNewGridLayout() {
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('DOMContentLoaded event triggered');
-    addContainerWithProducts();
+    addContainerWithProducts(); 
+     
+    document.addEventListener("categorySelected", async function(event) {
+        const category = event.detail;
+        const products = await fetchProducts(category);
+        renderProducts(products);
+    });
     // Function to add event listener to containers
     function addClickListenerToContainers() {
         const containers = document.querySelectorAll('.container');
